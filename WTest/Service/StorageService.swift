@@ -33,8 +33,8 @@ public class StorageService: StorageServiceProtocol {
 
             let expenseEntity = AddressEntity(context: context)
 
-            expenseEntity.postalCodeNumber = Int64($0.postalCodeNumber)
-            expenseEntity.postalCodeExtension = Int64($0.postalCodeExtension)
+            expenseEntity.postalCodeNumber = $0.postalCodeNumber.asInt64
+            expenseEntity.postalCodeExtension = $0.postalCodeExtension.asInt64
             expenseEntity.designation = $0.designation
 
         })

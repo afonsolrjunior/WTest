@@ -17,8 +17,8 @@ public class AddressAdapter: AddressAdapterProtocol {
     public init() {}
 
     public func adapt(entity: AddressEntity) -> Address {
-        let postalCodeNumber = Int(entity.postalCodeNumber)
-        let postalCodeExtension = Int(entity.postalCodeExtension)
+        let postalCodeNumber = entity.postalCodeNumber.asInt
+        let postalCodeExtension = entity.postalCodeExtension.asInt
         let designation = entity.designation ?? "Unknown"
         return Address(postalCodeNumber: postalCodeNumber,
                        postalCodeExtension: postalCodeExtension,

@@ -31,6 +31,9 @@
 		2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F9283E513D009A25FC /* AddressAdapter.swift */; };
 		2F3395FC283E5363009A25FC /* ServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */; };
 		2F3395FE283E5A98009A25FC /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395FD283E5A98009A25FC /* StorageService.swift */; };
+		2F339602283E5DFD009A25FC /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339601283E5DFD009A25FC /* Int+Extensions.swift */; };
+		2F339604283E5E54009A25FC /* Int64+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339603283E5E54009A25FC /* Int64+Extensions.swift */; };
+		2F339606283E5EB1009A25FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339605283E5EB1009A25FC /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		2F3395F9283E513D009A25FC /* AddressAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAdapter.swift; sourceTree = "<group>"; };
 		2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfiguration.swift; sourceTree = "<group>"; };
 		2F3395FD283E5A98009A25FC /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		2F339601283E5DFD009A25FC /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		2F339603283E5E54009A25FC /* Int64+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+Extensions.swift"; sourceTree = "<group>"; };
+		2F339605283E5EB1009A25FC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 		2F3395EC283E4DA2009A25FC /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2F339600283E5DEA009A25FC /* Extensions */,
 				2F3395F1283E503C009A25FC /* PersistanceController.swift */,
 			);
 			path = Util;
@@ -228,6 +235,16 @@
 				2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		2F339600283E5DEA009A25FC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2F339601283E5DFD009A25FC /* Int+Extensions.swift */,
+				2F339603283E5E54009A25FC /* Int64+Extensions.swift */,
+				2F339605283E5EB1009A25FC /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,9 +395,12 @@
 				2F3395F5283E50F8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */,
 				2F3395FC283E5363009A25FC /* ServiceConfiguration.swift in Sources */,
 				2F3395B2283D03ED009A25FC /* WTest.xcdatamodeld in Sources */,
+				2F339602283E5DFD009A25FC /* Int+Extensions.swift in Sources */,
 				2F3395A8283D03EC009A25FC /* AppDelegate.swift in Sources */,
 				2F3395F6283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */,
 				2F3395AA283D03ED009A25FC /* SceneDelegate.swift in Sources */,
+				2F339604283E5E54009A25FC /* Int64+Extensions.swift in Sources */,
+				2F339606283E5EB1009A25FC /* String+Extensions.swift in Sources */,
 				2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */,
 				2F3395F0283E4F2A009A25FC /* AddressService.swift in Sources */,
 				2F3395EE283E4DCF009A25FC /* Address.swift in Sources */,
