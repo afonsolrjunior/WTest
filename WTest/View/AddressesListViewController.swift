@@ -102,7 +102,7 @@ extension AddressesListViewController {
 
         self.viewModel.output.isLoading.asDriver(onErrorDriveWith: .just(false)).asObservable().subscribe(onNext: { [weak self] isLoading in
             guard let self = self else { return }
-            //self.loadingIndicator.isHidden = !isLoading
+            self.loadingIndicator.isHidden = !isLoading
             if isLoading {
                 self.loadingIndicator.startAnimating()
             } else {
