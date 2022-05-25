@@ -42,7 +42,8 @@ public class AddresssesListViewModel: AddresssesListViewModelProtocol {
                 } else {
                     return self.addressesService.fetchAddresses(using: nil)
                 }
-            }.bind(to: self.output.addresses).disposed(by: disposeBag)
+            }.observe(on: MainScheduler.instance)
+            .bind(to: self.output.addresses).disposed(by: disposeBag)
     }
 
 }
