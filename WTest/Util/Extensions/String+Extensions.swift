@@ -10,7 +10,7 @@ import Foundation
 public extension String {
 
     var isNumber: Bool {
-        self.allSatisfy({ $0.isNumber })
+        self.allSatisfy({ $0.isWholeNumber })
     }
 
 }

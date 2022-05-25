@@ -20,8 +20,7 @@ public enum AddressServiceError: Error {
 }
 
 public protocol AddressServiceProtocol {
-    func fetchAllAddresses() -> Observable<[Address]>
-    func fetchAddresses(matching postalCodeNumber: Int?, postalCodeExtension: Int?, designation: String?) -> Observable<[Address]>
+    func fetchAddresses(using predicate: NSPredicate?) -> Observable<[Address]>
 }
 
 public class AddressService: AddressServiceProtocol {
@@ -35,17 +34,25 @@ public class AddressService: AddressServiceProtocol {
         self.storageService = storageService
     }
 
-    public func fetchAllAddresses() -> Observable<[Address]> {
+    public func fetchAddresses(using predicate: NSPredicate? = nil) -> Observable<[Address]> {
 
-        return Observable.create { observer -> Disposable in
-            if let url = URL(string: ServiceConfiguration.baseUrlString) {
+        return Observable.create {[weak self] observer -> Disposable in
 
-                let dataTask = URLSession.shared.dataTask(with: url) {[weak self] data, response, error in
+            guard let self = self else {
+                observer.onError(AddressServiceError.unhandled)
+                return Disposables.create()
+            }
 
-                    guard let self = self else {
-                        observer.onError(AddressServiceError.unhandled)
-                        return
-                    }
+            let storedAddresses = self.getStoredAddresses(using: predicate)
+
+            if !storedAddresses.isEmpty {
+
+                observer.onNext(storedAddresses.map({ self.adapter.adapt(entity: $0) }))
+                return Disposables.create()
+
+            } else if let url = URL(string: ServiceConfiguration.baseUrlString) {
+
+                let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
 
                     guard error == nil else {
                         observer.onError(AddressServiceError.custom(error: error))
@@ -66,6 +73,7 @@ public class AddressService: AddressServiceProtocol {
                     do {
                         let decoder = CSVDecoder { $0.headerStrategy = .firstLine }
                         let addresses = try decoder.decode([Address].self, from: data)
+
                         try self.saveAddressesToStorage(addresses)
                         observer.onNext(addresses)
                         observer.onCompleted()
@@ -91,12 +99,20 @@ public class AddressService: AddressServiceProtocol {
         }
     }
 
-    public func fetchAddresses(matching postalCodeNumber: Int?, postalCodeExtension: Int?, designation: String?) -> Observable<[Address]> {
-        .just([])
-    }
-
     private func saveAddressesToStorage(_ addresses: [Address]) throws {
         try storageService.save(addresses: addresses)
+    }
+
+    private func getStoredAddresses(using predicate: NSPredicate? = nil) -> [AddressEntity] {
+
+        do {
+            let addresses = try storageService.fetchAddresses(using: predicate)
+            return addresses
+        } catch {
+            return []
+        }
+
+
     }
 
 }

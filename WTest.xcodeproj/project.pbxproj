@@ -34,6 +34,7 @@
 		2F339602283E5DFD009A25FC /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339601283E5DFD009A25FC /* Int+Extensions.swift */; };
 		2F339604283E5E54009A25FC /* Int64+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339603283E5E54009A25FC /* Int64+Extensions.swift */; };
 		2F339606283E5EB1009A25FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339605283E5EB1009A25FC /* String+Extensions.swift */; };
+		2F339608283E5FE4009A25FC /* AddressesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339607283E5FE4009A25FC /* AddressesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		2F339601283E5DFD009A25FC /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		2F339603283E5E54009A25FC /* Int64+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+Extensions.swift"; sourceTree = "<group>"; };
 		2F339605283E5EB1009A25FC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		2F339607283E5FE4009A25FC /* AddressesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		2F3395E8283E4D81009A25FC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2F339607283E5FE4009A25FC /* AddressesListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				2F339606283E5EB1009A25FC /* String+Extensions.swift in Sources */,
 				2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */,
 				2F3395F0283E4F2A009A25FC /* AddressService.swift in Sources */,
+				2F339608283E5FE4009A25FC /* AddressesListViewModel.swift in Sources */,
 				2F3395EE283E4DCF009A25FC /* Address.swift in Sources */,
 				2F3395F2283E503C009A25FC /* PersistanceController.swift in Sources */,
 			);
