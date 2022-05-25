@@ -29,6 +29,8 @@
 		2F3395F5283E50F8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */; };
 		2F3395F6283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */; };
 		2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F9283E513D009A25FC /* AddressAdapter.swift */; };
+		2F3395FC283E5363009A25FC /* ServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */; };
+		2F3395FE283E5A98009A25FC /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395FD283E5A98009A25FC /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2F3395F9283E513D009A25FC /* AddressAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAdapter.swift; sourceTree = "<group>"; };
+		2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfiguration.swift; sourceTree = "<group>"; };
+		2F3395FD283E5A98009A25FC /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +189,10 @@
 		2F3395EB283E4D9D009A25FC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2F3395FF283E5C97009A25FC /* Configuration */,
 				2F3395F8283E5129009A25FC /* Adapter */,
 				2F3395EF283E4F2A009A25FC /* AddressService.swift */,
+				2F3395FD283E5A98009A25FC /* StorageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -214,6 +220,14 @@
 				2F3395F9283E513D009A25FC /* AddressAdapter.swift */,
 			);
 			path = Adapter;
+			sourceTree = "<group>";
+		};
+		2F3395FF283E5C97009A25FC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F3395AC283D03ED009A25FC /* ViewController.swift in Sources */,
+				2F3395FE283E5A98009A25FC /* StorageService.swift in Sources */,
 				2F3395F5283E50F8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */,
+				2F3395FC283E5363009A25FC /* ServiceConfiguration.swift in Sources */,
 				2F3395B2283D03ED009A25FC /* WTest.xcdatamodeld in Sources */,
 				2F3395A8283D03EC009A25FC /* AppDelegate.swift in Sources */,
 				2F3395F6283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */,

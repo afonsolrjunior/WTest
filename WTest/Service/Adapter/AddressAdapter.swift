@@ -13,6 +13,9 @@ public protocol AddressAdapterProtocol {
 }
 
 public class AddressAdapter: AddressAdapterProtocol {
+
+    public init() {}
+
     public func adapt(entity: AddressEntity) -> Address {
         let postalCodeNumber = Int(entity.postalCodeNumber)
         let postalCodeExtension = Int(entity.postalCodeExtension)

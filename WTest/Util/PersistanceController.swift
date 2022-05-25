@@ -8,10 +8,10 @@
 import Foundation
 import CoreData
 
-struct PersistanceController {
-    static let shared = PersistanceController()
+public struct PersistanceController {
+    public static let shared = PersistanceController()
 
-    let container: NSPersistentContainer
+    public let container: NSPersistentContainer
 
     private init() {
         container = NSPersistentContainer(name: "WTest")
