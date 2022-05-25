@@ -24,6 +24,11 @@
 		2F3395E4283E4BA5009A25FC /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E3283E4BA5009A25FC /* RxTest */; };
 		2F3395E7283E4BC3009A25FC /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E6283E4BC3009A25FC /* CodableCSV */; };
 		2F3395EE283E4DCF009A25FC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395ED283E4DCF009A25FC /* Address.swift */; };
+		2F3395F0283E4F2A009A25FC /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395EF283E4F2A009A25FC /* AddressService.swift */; };
+		2F3395F2283E503C009A25FC /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F1283E503C009A25FC /* PersistanceController.swift */; };
+		2F3395F5283E50F8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */; };
+		2F3395F6283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */; };
+		2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F9283E513D009A25FC /* AddressAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		2F3395CB283D03F0009A25FC /* WTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTestUITests.swift; sourceTree = "<group>"; };
 		2F3395CD283D03F0009A25FC /* WTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2F3395ED283E4DCF009A25FC /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		2F3395EF283E4F2A009A25FC /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
+		2F3395F1283E503C009A25FC /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
+		2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2F3395F9283E513D009A25FC /* AddressAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +176,7 @@
 		2F3395EA283E4D97009A25FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2F3395F7283E5100009A25FC /* CoreData */,
 				2F3395ED283E4DCF009A25FC /* Address.swift */,
 			);
 			path = Model;
@@ -174,6 +185,8 @@
 		2F3395EB283E4D9D009A25FC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2F3395F8283E5129009A25FC /* Adapter */,
+				2F3395EF283E4F2A009A25FC /* AddressService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -181,8 +194,26 @@
 		2F3395EC283E4DA2009A25FC /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2F3395F1283E503C009A25FC /* PersistanceController.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		2F3395F7283E5100009A25FC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */,
+				2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2F3395F8283E5129009A25FC /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				2F3395F9283E513D009A25FC /* AddressAdapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,10 +360,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F3395AC283D03ED009A25FC /* ViewController.swift in Sources */,
+				2F3395F5283E50F8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */,
 				2F3395B2283D03ED009A25FC /* WTest.xcdatamodeld in Sources */,
 				2F3395A8283D03EC009A25FC /* AppDelegate.swift in Sources */,
+				2F3395F6283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */,
 				2F3395AA283D03ED009A25FC /* SceneDelegate.swift in Sources */,
+				2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */,
+				2F3395F0283E4F2A009A25FC /* AddressService.swift in Sources */,
 				2F3395EE283E4DCF009A25FC /* Address.swift in Sources */,
+				2F3395F2283E503C009A25FC /* PersistanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
