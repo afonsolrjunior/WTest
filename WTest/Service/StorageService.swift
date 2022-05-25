@@ -63,16 +63,4 @@ public class StorageService: StorageServiceProtocol {
         }
     }
 
-    public func removeAddresses() {
-        let context = self.managedObjectContext
-        do {
-            let addresses = try self.fetchAddresses(using: nil)
-            addresses.forEach({ context.delete($0) })
-            try context.save()
-        } catch {
-
-        }
-
-    }
-
 }

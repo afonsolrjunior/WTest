@@ -38,7 +38,7 @@ public class AddresssesListViewModel: AddresssesListViewModelProtocol {
     }
 
     private func bindInput() {
-        input.text.skip(1).throttle(.milliseconds(400), scheduler: ConcurrentMainScheduler.instance)
+        input.text.skip(1)
             .distinctUntilChanged()
             .do(onNext: { _ in
                 self.output.isLoading.onNext(true)

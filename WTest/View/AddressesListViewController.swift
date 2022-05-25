@@ -94,13 +94,14 @@ extension AddressesListViewController {
                 cell.contentConfiguration = configuration
             }.disposed(by: disposeBag)
 
-        self.searchBar.rx.text.orEmpty.bind(to: self.viewModel.input.text).disposed(by: disposeBag)
+        self.searchBar.rx.text.orEmpty.throttle(.milliseconds(400), scheduler: MainScheduler.asyncInstance)
+            .bind(to: self.viewModel.input.text).disposed(by: disposeBag)
         self.searchBar.rx.searchButtonClicked.asDriver().drive {[weak self] _ in
             self?.searchBar.endEditing(true)
         }.disposed(by: disposeBag)
 
 
-        self.viewModel.output.isLoading.asDriver(onErrorDriveWith: .just(false)).asObservable().subscribe(onNext: { [weak self] isLoading in
+        self.viewModel.output.isLoading.asDriver(onErrorDriveWith: .just(false)).drive(onNext: { [weak self] isLoading in
             guard let self = self else { return }
             self.loadingIndicator.isHidden = !isLoading
             if isLoading {
