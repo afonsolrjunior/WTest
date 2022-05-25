@@ -33,6 +33,8 @@ class AddressesListViewController: UIViewController {
     private let viewModel: AddresssesListViewModelProtocol
     private let disposeBag = DisposeBag()
 
+    private var keyboardHeight: CGFloat = 0
+
     public init(viewModel: AddresssesListViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -48,6 +50,23 @@ class AddressesListViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupBinds()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+    }
+
+    @objc
+    private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            tableView.frame.origin.y -= keyboardSize.height
+            keyboardHeight = keyboardSize.height
+        }
+    }
+
+    @objc
+    private func keyboardWillHide(notification: NSNotification) {
+        tableView.frame.origin.y += keyboardHeight
     }
 
 
@@ -76,6 +95,10 @@ extension AddressesListViewController {
             }.disposed(by: disposeBag)
 
         self.searchBar.rx.text.orEmpty.bind(to: self.viewModel.input.text).disposed(by: disposeBag)
+        self.searchBar.rx.searchButtonClicked.asDriver().drive {[weak self] _ in
+            self?.searchBar.endEditing(true)
+        }.disposed(by: disposeBag)
+
 
         self.viewModel.output.isLoading.asDriver(onErrorDriveWith: .just(false)).asObservable().subscribe(onNext: { [weak self] isLoading in
             guard let self = self else { return }
