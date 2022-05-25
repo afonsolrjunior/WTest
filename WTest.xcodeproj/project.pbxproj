@@ -16,26 +16,22 @@
 		2F3395C2283D03F0009A25FC /* WTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395C1283D03F0009A25FC /* WTestTests.swift */; };
 		2F3395CC283D03F0009A25FC /* WTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395CB283D03F0009A25FC /* WTestUITests.swift */; };
 		2F3395CE283D03F0009A25FC /* WTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395CD283D03F0009A25FC /* WTestUITestsLaunchTests.swift */; };
-		2F3395DC283E4BA5009A25FC /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395DB283E4BA5009A25FC /* RxBlocking */; };
 		2F3395DE283E4BA5009A25FC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395DD283E4BA5009A25FC /* RxCocoa */; };
 		2F3395E0283E4BA5009A25FC /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395DF283E4BA5009A25FC /* RxRelay */; };
 		2F3395E2283E4BA5009A25FC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E1283E4BA5009A25FC /* RxSwift */; };
-		2F3395E4283E4BA5009A25FC /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E3283E4BA5009A25FC /* RxTest */; };
 		2F3395E7283E4BC3009A25FC /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E6283E4BC3009A25FC /* CodableCSV */; };
 		2F3395EE283E4DCF009A25FC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395ED283E4DCF009A25FC /* Address.swift */; };
 		2F3395F0283E4F2A009A25FC /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395EF283E4F2A009A25FC /* AddressService.swift */; };
 		2F3395F2283E503C009A25FC /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F1283E503C009A25FC /* PersistanceController.swift */; };
-		2F3395F5283E50F8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */; };
-		2F3395F6283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */; };
 		2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395F9283E513D009A25FC /* AddressAdapter.swift */; };
 		2F3395FC283E5363009A25FC /* ServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */; };
 		2F3395FE283E5A98009A25FC /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395FD283E5A98009A25FC /* StorageService.swift */; };
-		2F339602283E5DFD009A25FC /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339601283E5DFD009A25FC /* Int+Extensions.swift */; };
-		2F339604283E5E54009A25FC /* Int64+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339603283E5E54009A25FC /* Int64+Extensions.swift */; };
-		2F339606283E5EB1009A25FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339605283E5EB1009A25FC /* String+Extensions.swift */; };
 		2F339608283E5FE4009A25FC /* AddressesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339607283E5FE4009A25FC /* AddressesListViewModel.swift */; };
 		2F33960B283E6A74009A25FC /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F33960A283E6A74009A25FC /* CoordinatorFactory.swift */; };
 		2F33960E283E6AB0009A25FC /* AddressesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F33960D283E6AB0009A25FC /* AddressesListCoordinator.swift */; };
+		2F339615283E86FA009A25FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F339614283E86FA009A25FC /* String+Extensions.swift */; };
+		2F33961C283E8BD8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F33961A283E8BD8009A25FC /* AddressEntity+CoreDataClass.swift */; };
+		2F33961D283E8BD8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F33961B283E8BD8009A25FC /* AddressEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,17 +68,15 @@
 		2F3395ED283E4DCF009A25FC /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		2F3395EF283E4F2A009A25FC /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
 		2F3395F1283E503C009A25FC /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
-		2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2F3395F9283E513D009A25FC /* AddressAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAdapter.swift; sourceTree = "<group>"; };
 		2F3395FB283E5363009A25FC /* ServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfiguration.swift; sourceTree = "<group>"; };
 		2F3395FD283E5A98009A25FC /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
-		2F339601283E5DFD009A25FC /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
-		2F339603283E5E54009A25FC /* Int64+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+Extensions.swift"; sourceTree = "<group>"; };
-		2F339605283E5EB1009A25FC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2F339607283E5FE4009A25FC /* AddressesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewModel.swift; sourceTree = "<group>"; };
 		2F33960A283E6A74009A25FC /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		2F33960D283E6AB0009A25FC /* AddressesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListCoordinator.swift; sourceTree = "<group>"; };
+		2F339614283E86FA009A25FC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		2F33961A283E8BD8009A25FC /* AddressEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2F33961B283E8BD8009A25FC /* AddressEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +84,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F3395E4283E4BA5009A25FC /* RxTest in Frameworks */,
 				2F3395E0283E4BA5009A25FC /* RxRelay in Frameworks */,
 				2F3395DE283E4BA5009A25FC /* RxCocoa in Frameworks */,
 				2F3395E2283E4BA5009A25FC /* RxSwift in Frameworks */,
 				2F3395E7283E4BC3009A25FC /* CodableCSV in Frameworks */,
-				2F3395DC283E4BA5009A25FC /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,8 +203,8 @@
 		2F3395EC283E4DA2009A25FC /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2F339613283E86D9009A25FC /* Extensions */,
 				2F339609283E6A58009A25FC /* Factory */,
-				2F339600283E5DEA009A25FC /* Extensions */,
 				2F3395F1283E503C009A25FC /* PersistanceController.swift */,
 			);
 			path = Util;
@@ -221,8 +213,8 @@
 		2F3395F7283E5100009A25FC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				2F3395F3283E50F8009A25FC /* AddressEntity+CoreDataClass.swift */,
-				2F3395F4283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift */,
+				2F33961A283E8BD8009A25FC /* AddressEntity+CoreDataClass.swift */,
+				2F33961B283E8BD8009A25FC /* AddressEntity+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -243,16 +235,6 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		2F339600283E5DEA009A25FC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2F339601283E5DFD009A25FC /* Int+Extensions.swift */,
-				2F339603283E5E54009A25FC /* Int64+Extensions.swift */,
-				2F339605283E5EB1009A25FC /* String+Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		2F339609283E6A58009A25FC /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +249,14 @@
 				2F33960D283E6AB0009A25FC /* AddressesListCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2F339613283E86D9009A25FC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2F339614283E86FA009A25FC /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,11 +276,9 @@
 			);
 			name = WTest;
 			packageProductDependencies = (
-				2F3395DB283E4BA5009A25FC /* RxBlocking */,
 				2F3395DD283E4BA5009A25FC /* RxCocoa */,
 				2F3395DF283E4BA5009A25FC /* RxRelay */,
 				2F3395E1283E4BA5009A25FC /* RxSwift */,
-				2F3395E3283E4BA5009A25FC /* RxTest */,
 				2F3395E6283E4BC3009A25FC /* CodableCSV */,
 			);
 			productName = WTest;
@@ -411,17 +399,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F33961C283E8BD8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */,
 				2F3395AC283D03ED009A25FC /* AddressesListViewController.swift in Sources */,
 				2F3395FE283E5A98009A25FC /* StorageService.swift in Sources */,
-				2F3395F5283E50F8009A25FC /* AddressEntity+CoreDataClass.swift in Sources */,
 				2F3395FC283E5363009A25FC /* ServiceConfiguration.swift in Sources */,
 				2F3395B2283D03ED009A25FC /* WTest.xcdatamodeld in Sources */,
-				2F339602283E5DFD009A25FC /* Int+Extensions.swift in Sources */,
+				2F339615283E86FA009A25FC /* String+Extensions.swift in Sources */,
 				2F3395A8283D03EC009A25FC /* AppDelegate.swift in Sources */,
-				2F3395F6283E50F8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */,
 				2F3395AA283D03ED009A25FC /* SceneDelegate.swift in Sources */,
-				2F339604283E5E54009A25FC /* Int64+Extensions.swift in Sources */,
-				2F339606283E5EB1009A25FC /* String+Extensions.swift in Sources */,
 				2F3395FA283E513D009A25FC /* AddressAdapter.swift in Sources */,
 				2F3395F0283E4F2A009A25FC /* AddressService.swift in Sources */,
 				2F339608283E5FE4009A25FC /* AddressesListViewModel.swift in Sources */,
@@ -429,6 +414,7 @@
 				2F33960B283E6A74009A25FC /* CoordinatorFactory.swift in Sources */,
 				2F3395F2283E503C009A25FC /* PersistanceController.swift in Sources */,
 				2F33960E283E6AB0009A25FC /* AddressesListCoordinator.swift in Sources */,
+				2F33961D283E8BD8009A25FC /* AddressEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,11 +769,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2F3395DB283E4BA5009A25FC /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F3395DA283E4BA4009A25FC /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
 		2F3395DD283E4BA5009A25FC /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F3395DA283E4BA4009A25FC /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -802,11 +783,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F3395DA283E4BA4009A25FC /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
-		};
-		2F3395E3283E4BA5009A25FC /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F3395DA283E4BA4009A25FC /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
 		};
 		2F3395E6283E4BC3009A25FC /* CodableCSV */ = {
 			isa = XCSwiftPackageProductDependency;

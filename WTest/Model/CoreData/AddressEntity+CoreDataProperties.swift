@@ -16,10 +16,9 @@ extension AddressEntity {
         return NSFetchRequest<AddressEntity>(entityName: "AddressEntity")
     }
 
-    @NSManaged public var postalCodeNumber: Int64
-    @NSManaged public var postalCodeExtension: Int64
+    @NSManaged public var postalCodeNumber: String?
+    @NSManaged public var postalCodeExtension: String?
     @NSManaged public var designation: String?
-
 
 }
 

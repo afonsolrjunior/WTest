@@ -2,10 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AddressEntity" representedClassName="AddressEntity" syncable="YES">
         <attribute name="designation" optional="YES" attributeType="String"/>
-        <attribute name="postalCodeExtension" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="postalCodeNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="postalCodeExtension" optional="YES" attributeType="String"/>
+        <attribute name="postalCodeNumber" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="AddressEntity" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="AddressEntity" positionX="-54" positionY="-9" width="128" height="74"/>
     </elements>
 </model>

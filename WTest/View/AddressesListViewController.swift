@@ -18,13 +18,15 @@ class AddressesListViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 
     private lazy var loadingIndicator: UIActivityIndicatorView = {
-        let loadingIndicator = UIActivityIndicatorView()
+        let loadingIndicator = UIActivityIndicatorView(style: .large)
         loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingIndicator.isHidden = false
         return loadingIndicator
     }()
 
@@ -45,6 +47,7 @@ class AddressesListViewController: UIViewController {
 
         setupViews()
         setupConstraints()
+        setupBinds()
     }
 
 
@@ -53,28 +56,53 @@ class AddressesListViewController: UIViewController {
 extension AddressesListViewController {
 
     private func setupViews() {
-        self.viewModel.output.addresses
-            .bind(to: tableView.rx.items(cellIdentifier: String(describing: UITableViewCell.self))) { _, address, cell in
+        view.addSubview(searchBar)
+        view.addSubview(tableView)
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+
+        view.backgroundColor = UIColor(white: 0, alpha: 0.7)
+
+    }
+
+    private func setupBinds() {
+
+        self.viewModel.output.addresses.observe(on: MainScheduler.asyncInstance)
+            .bind(to: tableView.rx.items(cellIdentifier: String(describing: UITableViewCell.self))) {[weak self] _, address, cell in
+                guard let self = self else { return }
                 var configuration = UIListContentConfiguration.cell()
-                configuration.text = "\(address.postalCodeExtension)-\(address.postalCodeNumber) \(address.designation)"
+                configuration.attributedText = self.viewModel.getFormmatedString(for: address)
                 cell.contentConfiguration = configuration
             }.disposed(by: disposeBag)
 
         self.searchBar.rx.text.orEmpty.bind(to: self.viewModel.input.text).disposed(by: disposeBag)
+
+        self.viewModel.output.isLoading.asDriver(onErrorDriveWith: .just(false)).asObservable().subscribe(onNext: { [weak self] isLoading in
+            guard let self = self else { return }
+            //self.loadingIndicator.isHidden = !isLoading
+            if isLoading {
+                self.loadingIndicator.startAnimating()
+            } else {
+                self.loadingIndicator.stopAnimating()
+            }
+        }).disposed(by: disposeBag)
 
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
 
-            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
-            searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 12),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+
+            loadingIndicator.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
 
         ])
     }

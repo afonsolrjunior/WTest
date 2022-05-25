@@ -33,8 +33,8 @@ public class StorageService: StorageServiceProtocol {
 
             let expenseEntity = AddressEntity(context: context)
 
-            expenseEntity.postalCodeNumber = $0.postalCodeNumber.asInt64
-            expenseEntity.postalCodeExtension = $0.postalCodeExtension.asInt64
+            expenseEntity.postalCodeNumber = $0.postalCodeNumber
+            expenseEntity.postalCodeExtension = $0.postalCodeExtension
             expenseEntity.designation = $0.designation
 
         })
@@ -49,6 +49,7 @@ public class StorageService: StorageServiceProtocol {
     public func fetchAddresses(using predicate: NSPredicate?) throws -> [AddressEntity] {
         let context = self.managedObjectContext
         let request = AddressEntity.fetchRequest()
+        request.fetchLimit = 50
 
         if let predicate = predicate {
             request.predicate = predicate
@@ -60,6 +61,18 @@ public class StorageService: StorageServiceProtocol {
         } catch {
             throw StorageServiceError.fetching
         }
+    }
+
+    public func removeAddresses() {
+        let context = self.managedObjectContext
+        do {
+            let addresses = try self.fetchAddresses(using: nil)
+            addresses.forEach({ context.delete($0) })
+            try context.save()
+        } catch {
+
+        }
+
     }
 
 }

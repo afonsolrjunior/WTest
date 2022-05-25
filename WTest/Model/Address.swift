@@ -9,8 +9,8 @@ import Foundation
 import CodableCSV
 
 public struct Address: Codable {
-    let postalCodeNumber: Int
-    let postalCodeExtension: Int
+    let postalCodeNumber: String
+    let postalCodeExtension: String
     let designation: String
 
     enum CodingKeys: String, CodingKey {
