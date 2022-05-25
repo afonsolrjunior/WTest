@@ -23,6 +23,7 @@
 		2F3395E2283E4BA5009A25FC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E1283E4BA5009A25FC /* RxSwift */; };
 		2F3395E4283E4BA5009A25FC /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E3283E4BA5009A25FC /* RxTest */; };
 		2F3395E7283E4BC3009A25FC /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3395E6283E4BC3009A25FC /* CodableCSV */; };
+		2F3395EE283E4DCF009A25FC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3395ED283E4DCF009A25FC /* Address.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		2F3395C7283D03F0009A25FC /* WTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3395CB283D03F0009A25FC /* WTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTestUITests.swift; sourceTree = "<group>"; };
 		2F3395CD283D03F0009A25FC /* WTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2F3395ED283E4DCF009A25FC /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,11 @@
 		2F3395A6283D03EC009A25FC /* WTest */ = {
 			isa = PBXGroup;
 			children = (
+				2F3395EC283E4DA2009A25FC /* Util */,
+				2F3395EB283E4D9D009A25FC /* Service */,
+				2F3395EA283E4D97009A25FC /* Model */,
+				2F3395E9283E4D90009A25FC /* View */,
+				2F3395E8283E4D81009A25FC /* ViewModel */,
 				2F3395A7283D03EC009A25FC /* AppDelegate.swift */,
 				2F3395A9283D03ED009A25FC /* SceneDelegate.swift */,
 				2F3395AB283D03ED009A25FC /* ViewController.swift */,
@@ -140,6 +147,42 @@
 				2F3395CD283D03F0009A25FC /* WTestUITestsLaunchTests.swift */,
 			);
 			path = WTestUITests;
+			sourceTree = "<group>";
+		};
+		2F3395E8283E4D81009A25FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F3395E9283E4D90009A25FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F3395EA283E4D97009A25FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F3395ED283E4DCF009A25FC /* Address.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F3395EB283E4D9D009A25FC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2F3395EC283E4DA2009A25FC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +332,7 @@
 				2F3395B2283D03ED009A25FC /* WTest.xcdatamodeld in Sources */,
 				2F3395A8283D03EC009A25FC /* AppDelegate.swift in Sources */,
 				2F3395AA283D03ED009A25FC /* SceneDelegate.swift in Sources */,
+				2F3395EE283E4DCF009A25FC /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
